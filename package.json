@@ -1,0 +1,22 @@
+{
+  "name": "zopa-gke-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Blimeys/zopa-gke-example.git",
+  "author": "Jean Dulck <djeanmath@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev:client": "cd client && yarn dev",
+    "dev:server": "cd client && yarn dev",
+    "build:production": "yarn build:client && yarn build:server",
+    "build:client": "cd client && yarn build",
+    "build:server": "cd server && yarn build",
+    "run:server": "cd server && yarn start",
+    "install:client": "cd client && yarn",
+    "install:server": "cd server && yarn",
+    "install:full": "yarn install:client && yarn install:server",
+    "test:client": "cd client && yarn test",
+    "typecheck:client": "cd client && yarn typecheck",
+    "typecheck:server": "cd client && yarn typecheck"
+  }
+}

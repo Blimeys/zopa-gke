@@ -1,0 +1,43 @@
+{
+  "name": "zopa-gke-example-server",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "author": "Jean Dulck",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "yarn install:full && yarn build:js",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build:rollup": "rollup -c",
+    "build:js": "babel src --out-dir build --extensions \".ts,.tsx\" --source-maps inline",
+    "start:dev": "nodemon src/index.ts && yarn typecheck:watch",
+    "start:production": "node index.js",
+    "list:node": "sudo lsof -i :3000",
+    "typecheck": "tsc --noEmit",
+    "typecheck:watch": "yarn run type-check -- --watch",
+    "install:full": "rm -rf node_modules && yarn"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-numeric-separator": "^7.8.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.9.5",
+    "@babel/plugin-syntax-json-strings": "^7.8.3",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-typescript": "^7.9.0",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.6",
+    "babel-loader": "^8.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-watch": "^6.0.1",
+    "nodemon": "^2.0.3",
+    "ts-node": "^8.8.2",
+    "typescript": "^3.8.3"
+  }
+}
