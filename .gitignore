@@ -1,0 +1,12 @@
+# node_modules
+build
+
+*.DS_Store
+
+dist
+
+.jest
+
+coverage/
+
+yarn-error.log
