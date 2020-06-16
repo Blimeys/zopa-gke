@@ -1,0 +1,29 @@
+name: Test CI
+
+on: [pull_request] # Run on Pull Requests
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x] # Only run the 12.x build
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm install -g yarn
+      - name: Install dependencies
+        run: |
+          yarn install:full
+      - name: Run typechecks
+        run: |
+          yarn typecheck:client
+          yarn typecheck:server
+      # - name: Run Unit tests
+      #   run: |
+      #     yarn test:client
