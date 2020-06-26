@@ -8,6 +8,7 @@ const Main = () => (
     <a href="https://github.com/Blimeys/zopa-gke" target="_blank">
       Example repository
     </a>
+    <h2>Zopians</h2>
   </div>
 );
 
